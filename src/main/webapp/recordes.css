@@ -1,0 +1,57 @@
+body{
+    background-image: url("./img/fundo3.jpg");
+}
+#img{
+    margin-left: 35%;
+}
+#app{
+        width: 15%;
+        background-color: rgb(48, 128, 11);
+        margin-left: 200px;
+        border: black solid 3px;
+        border-radius: 5px;
+        margin-left: 43%;
+        margin-top: 230px;
+}
+#soldado {
+    position: absolute;
+    margin-top: 2.5px;
+    margin-left: 14px;
+}
+#ninja {
+    position: absolute;
+    margin-top: -66px;
+    margin-left: 169px;
+}
+#titulo {
+    font: normal 25px/normal Impact, Charcoal, sans-serif;
+    margin-top: 11px;
+    text-align: center;
+}
+#lista {
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    list-style: none;
+}
+#botao {
+    margin-left: 48.7%;
+    margin-top: 20px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;     
+}
+#botao:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+
+#logout {
+    font: normal 28px/normal Impact, Charcoal, sans-serif;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 49%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#logout:hover {
+    color: rgb(58, 221, 36);
+    cursor: pointer;
+}

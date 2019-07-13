@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Informações do Jogador</title>
+    <script src="js/geral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="info.css">
+
+    <style>
+        span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="./principal.html">
+        <img id="img" src="./img/titulo2.png" class="media-object  img-responsive img-thumbnail">
+    </a>
+    <div id="app">
+        <h3 id="titulo">INFORMAÇÕES DO JOGADOR</h3>
+        <span id="nome">Nome: {{jogador.nome}}</span>
+        <br>
+        <span id="nasc">Data Nascimento: {{jogador.dataNascimento}}</span>
+        <br>
+        <span id="email">Email: {{jogador.email}}</span>
+        <br>
+        <span id="login">Login: {{jogador.login}}</span>
+        <br>
+    </div>
+    <form method="get" action="./principal.html">
+        <button id="botao" type="submit">VOLTAR</button>
+    </form>
+    <a id="logout" href="#" onclick="logout()">SAIR</a>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                jogador: {}
+            },
+            methods: {
+                buscarInfoJogador: function (id) {
+
+                    var token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+
+                    axios.get('./api/jogador/' + id)
+                        .then(response => this.jogador = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu o erro a seguir: ${error}`);
+                        })
+                }
+            }, mounted() {
+                this.buscarInfoJogador(3)
+            }
+        })
+    </script>
+</body>
+
+</html>

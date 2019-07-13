@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <title>Login</title>
+        <link rel="stylesheet" href="login.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <a href="./index.html"><img id="img" src="./img/titulo2.png" class="media-object  img-responsive img-thumbnail"></a>
+   
+    <div id="app">
+            <div id="soldado">
+                <img src="./img/soldier.png" alt="">
+            </div>
+            <h1 id="titulo">LOGIN</h1>
+            <div id="ninja">
+                <img src="./img/ninja.png" alt="">
+            </div>
+
+        <form v-on:submit.prevent="logar">
+
+        <label id="labelLogin" for="login">Login:</label>
+        <input type="text" placeholder="Nome de usuário" name="usuario" id="login" v-model="login">
+
+        <label id="labelSenha" for="senha">Senha:</label>
+        <input type="password" placeholder="Senha" name="senha" id="senha" v-model="senha">
+
+        <button id="botao" type="submit">ENTRAR</button>
+
+        <a id="link_esquece" href="./recuperaSenha.html">Esqueceu sua senha?</a>
+
+        <a id="link_registro" href="./registro.html">Registrar-se</a> 
+        </form>    
+    <div id="status">
+     {{ status }}
+    </div>
+    </div>
+
+    <script>
+            var app = new Vue({
+            el: "#app",
+            data: {
+                login: "",
+                senha: "",
+                status: ""
+            }, methods: {
+                logar: function () {
+                    axios.post('api/login/', {
+                        username: this.login,
+                        password: this.senha
+                    }).then(response => {
+                        window.sessionStorage.setItem('usuario', response.data.username);
+                        window.sessionStorage.setItem('perfil', response.data.perfil);
+                        window.sessionStorage.setItem('token', response.data.token);
+                        window.sessionStorage.setItem('id', response.data.id);
+
+                        if (response.data.perfil == 1) {
+                            window.location = "admin.html";
+                        } else {
+                            window.location = "principal.html";
+                        }
+                    }).catch(error => {
+                        this.status = "Login Inválido"
+                        console.log(error);
+                    });
+                }
+            }
+        })
+    </script>
+    
+</body>
+
+</html>

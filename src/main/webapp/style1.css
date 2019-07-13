@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(68, 182, 16);
+    background-size: cover;
+}
+
+a{
+    height: 200px;
+    width: 40%;
+    margin-left: 25%;
+    position: relative; 
+    top: 35%;
+}
+a:hover{
+    cursor: pointer;
+}
+#d2{
+    background-image: url("img/controle2_2.png");
+    top: 35%;
+    position: relative;
+    float: right;
+}
+#d1{
+    background-image: url("img/controle1_1.png" );
+    height: 100%;
+    width: 100%;
+    top: 35%;
+    position: relative;
+    float: left;
+}

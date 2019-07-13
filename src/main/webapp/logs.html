@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log Acesso</title>
+    <script src="js/geral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="log.css">
+</head>
+
+<body>
+    <a href="./principal.html">
+        <img id="img" src="./img/titulo2.png" class="media-object  img-responsive img-thumbnail">
+    </a>
+    <div id="app">
+
+        <div id="soldado">
+            <img src="./img/soldier.png" alt="">
+        </div>
+
+        <h3 id="titulo">Acessos</h3>
+
+        <div id="ninja">
+            <img src="./img/ninja.png" alt="">
+        </div>
+
+        <ul>
+            <li id="lista" v-for="log in logs">
+                Nome: {{log.nomeJogador}}
+                <br> Data e Hora de Acesso: {{log.dataHoraAcesso}}
+                <br> Login: {{log.login}}
+            </li>
+        </ul>
+
+    </div>
+
+    <form method="get" action="./admin.html">
+        <button id="botao" type="submit">VOLTAR</button>
+    </form>
+
+    <a href="#" onclick="logout()" id="logout">SAIR</a>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                logs: []
+            }, methods: {
+                buscarLogs: function () {
+
+                    var token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/logAcesso/')
+                        .then(response => {
+                            this.logs = response.data;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                }
+            }, mounted() {
+                this.buscarLogs();
+
+            }
+        })
+
+        var usuario = window.sessionStorage.getItem('usuario');
+
+        if (usuario == undefined) {
+            window.location = "index.html";
+        }
+
+        var perfil = window.sessionStorage.getItem('perfil');
+
+        if (perfil != 1) {
+            window.location = "negado.html";
+        }
+    </script>
+</body>
+
+</html>

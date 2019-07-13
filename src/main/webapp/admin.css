@@ -1,0 +1,43 @@
+body{
+    background-image: url("./img/fundo3.jpg");
+}
+#img{
+    margin-left: 465px;
+}
+#titulo{
+    font: normal 40px/normal Impact, Charcoal, sans-serif;
+    margin-top: 10px;
+    text-align: center;
+}
+#logout {
+    font: normal 30px/normal Impact, Charcoal, sans-serif;
+    margin-top: 5px;
+    margin-left: 660px;
+    position: absolute;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#logout:hover {
+    color: rgb(58, 221, 36);
+    cursor: pointer;
+}
+#botao {
+    margin-left: 615px;
+    margin-top: 5px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;     
+}
+#botao:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+#botao1 {
+    margin-left: 620px;
+    margin-top: 5px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;     
+}
+#botao1:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}

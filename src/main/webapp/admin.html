@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/geral.js"></script>
+    <title>Página do Administrador</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <a href="./principal.html"><img id="img" src="./img/titulo2.png" class="media-object  img-responsive img-thumbnail"></a>
+    <h2 id="titulo">BEM VINDO ADMINISTRADOR!!</h2>
+    <form method="get" action="./logs.html">
+        <button id="botao" type="submit">LOGS DE ACESSO</button>
+    </form>
+    <form method="get" action="./principal.html">
+        <button id="botao1" type="submit">PAGINA INICIAL</button>
+    </form>
+    <a id="logout" href="#" onclick="logout()">SAIR</a>
+
+    <script>
+        var perfil = window.sessionStorage.getItem('perfil');
+
+        if (perfil != 1) {
+            window.location = "negado.html";
+        }
+    </script>
+</body>
+
+</html>

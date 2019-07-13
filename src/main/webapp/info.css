@@ -1,0 +1,57 @@
+body{
+    background-image: url("./img/fundo3.jpg");
+}
+#img{
+    margin-left: 450px;
+}
+#app {
+    width: 20%;
+    background-color: rgb(48, 128, 11);
+    margin-left: 200px;
+    border: black solid 3px;
+    border-radius: 5px;
+    margin-left: 550px;
+    margin-top: 230px;
+}
+#titulo {
+    font: normal 25px/normal Impact, Charcoal, sans-serif;
+    margin-top: 2px;
+    text-align: center;
+}
+#nome {
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+}
+#nasc {
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 2px;
+}
+#email {
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 2px;
+}
+#login {
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 2px;
+}
+#logout {
+    font: normal 30px/normal Impact, Charcoal, sans-serif;
+    margin-top: 5px;
+    margin-left: 660px;
+    position: absolute;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#logout:hover {
+    color: rgb(58, 221, 36);
+    cursor: pointer;
+}
+#botao {
+    margin-left: 650px;
+    margin-top: 5px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;     
+}
+#botao:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}

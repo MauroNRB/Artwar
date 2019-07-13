@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Art War</title>
+    <script src="phaser.min.js"></script>
+    <script src="js/geral.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+</head>
+
+<body>
+
+    <a href="#" id="sair" onclick="logout()">SAIR</a>
+    <form method="get" action="./index.html"><button id="voltar" type="submit">VOLTAR</button></form>
+
+
+    <div id="app"></div>
+
+    <script>
+        var usuario = window.sessionStorage.getItem('usuario');
+
+        if (usuario == undefined) {
+            window.location = "index.html";
+        }
+
+        function teste(pontuacao) {
+            app.salvaRecords(usuario, pontuacao)
+        }
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                records: []
+            }, methods: {
+                salvaRecords: function (usuario, pontuacao) {
+                    var token = window.sessionStorage.getItem('token');
+                    var id = window.sessionStorage.getItem('id');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+
+                    axios.post('api/protegido/pontuacao', {
+                        pontos: pontuacao,
+                        nomeJogador: usuario,
+                        idJogador: id                            
+                    }).then(response => {
+                        this.records = response.data;
+                    }).catch(function (error) {
+                        console.log(error);
+                    })
+                }
+            }
+        })
+
+    </script>
+
+    <script src="js/logico.js"></script>
+</body>
+
+</html>

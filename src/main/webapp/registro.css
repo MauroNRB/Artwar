@@ -1,0 +1,144 @@
+body{
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: url("./img/fundo3.jpg");
+}
+#img{
+    margin-left: 35%;
+}
+#status{
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    text-align: center;
+    margin-left: -3px;
+    margin-top: 10px;
+    background-color: rgb(4, 92, 11);
+    border-left: black solid 3px;
+    border-right: black solid 3px;
+    border-radius: 5px;
+    width: 100%;
+}
+#soldado {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+#ninja {
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 187px;
+}
+#app {
+    margin: 0;
+    width: 17%;
+    height: 410px;
+    background-color: rgb(48, 128, 11);
+    border-radius: 5px;
+    margin-left: 43%;
+    margin-top: 140px;
+    border: black solid 3px;
+}
+#labelNome {
+    position: absolute;
+    margin-left: 30px;
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: -20px;
+}
+#nome {
+    margin-left: 30px;
+    margin-top: 2px;
+    border-radius: 5px; 
+    font: normal 12px/normal Impact, Charcoal, sans-serif;
+    width: 173px;
+}
+#labelLogin {
+    margin-left: 30px;
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+}
+#nick {
+   margin-left: 30px;
+   margin-top: 2px;
+   border-radius: 5px; 
+   font: normal 12px/normal Impact, Charcoal, sans-serif;
+   width: 173px;     
+}
+#labelEmail{
+    margin-left: 30px;
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 10px;
+}
+#email{
+    margin-left: 30px;
+   margin-top: 2px;
+   border-radius: 5px;
+   font: normal 12px/normal Impact, Charcoal, sans-serif;
+   width: 173px;
+}
+#labelSenha {
+    margin-left: 30px;
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 10px;
+}
+#senha {
+    margin-left: 30px;
+    margin-top: 2px;
+    border-radius: 5px; 
+    font: normal 12px/normal Impact, Charcoal, sans-serif;
+   width: 173px;
+}
+#labelConf {
+    margin-left: 30px;
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 10px;
+}
+#confsenha {
+    margin-left: 30px;
+    margin-top: 2px;
+    border-radius: 5px;  
+    font: normal 12px/normal Impact, Charcoal, sans-serif;
+   width: 173px;
+}
+#labelNasc {
+    margin-left: 30px;
+    font: normal 18px/normal Impact, Charcoal, sans-serif;
+    margin-top: 10px;
+}
+#datanascimento {
+    margin-left: 30px;
+    margin-top: 2px;
+    border-radius: 5px; 
+    font: normal 12px/normal Impact, Charcoal, sans-serif;
+    width: 173px; 
+}
+#botao {
+    margin-left: 55px;
+    margin-top: 23px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;
+    background-color: white;
+     
+}
+#botao:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+#botao1 {
+    margin-left: 80px;
+    margin-top: 33px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;
+    background-color: white;
+     
+}
+#botao1:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+#titulo {
+    margin-left: 66px;
+    position: relative;
+    top: -10px;
+    font: normal 29px/normal Impact, Charcoal, sans-serif;
+
+}
+#link_login{
+    text-decoration: none;
+}

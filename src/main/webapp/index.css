@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(32, 99, 1);
+    background-size: cover;
+    margin: 0;
+}
+#a{
+    height: 359px;
+    width: 85px;
+    margin-left: 36%;
+    margin-top: 20%;
+    position: absolute; 
+}
+#a:hover{
+    cursor: pointer;
+}
+
+#recordes{
+    margin-left: 500px;
+    margin-top: 0px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;      
+}
+#recordes:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+#info{
+    position: absolute;
+    margin-left: 610px;
+    margin-top: -25px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;
+    float: left;      
+}
+#info:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+#admin{
+    position: absolute;
+    margin-left: 750px;
+    margin-top: -25px;
+    border-radius: 5px; 
+    font: normal 14px/normal Arial Black, Gadget, sans-serif;
+    float: left;      
+}
+#admin:hover {
+    color: rgb(37, 100, 7);
+    cursor: pointer;
+}
+#logout {
+    font: normal 30px/normal Impact, Charcoal, sans-serif;
+    margin-top: 2px;
+    margin-left: 670px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    height: 40px;
+    width: 60px;
+}
+#logout:hover {
+    color: rgb(58, 221, 36);
+    cursor: pointer;
+}
+#d1{
+    background-image: url("img/controle1.png" );
+    height: 407px;
+    width: 266px;
+    top: 15%;
+    position: relative;
+    float: left;
+    margin-top: 11%;
+
+}
+
+#d2{
+    background-image: url("img/controle2.png");
+    height: 407px;
+    width: 240px;
+    top: 15%;
+    position: relative;
+    float: right;
+    margin-top: 11%;
+}

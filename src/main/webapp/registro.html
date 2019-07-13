@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="registro.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <a href="./index.html">
+        <img id="img" src="./img/titulo2.png" class="media-object  img-responsive img-thumbnail">
+    </a>
+    <article id="app">
+        <div id="soldado">
+            <img src="./img/soldier.png" alt="">
+        </div>
+        <h1 id="titulo">REGISTRO</h1>
+        <div id="ninja">
+            <img src="./img/ninja.png" alt="">
+        </div>
+        <form v-on:submit.prevent="salvar">
+            <label id="labelNome" for="nome">Nome:</label>
+
+            <input type="text" placeholder="Nome" v-model="nome" id="nome" required maxlength="40">
+
+            <label id="labelNasc" for="dataNascimento">Data Nascimento:</label>
+
+            <input type="date" placeholder="Data de Nascimento" v-model="dataNascimento" id="datanascimento" required>
+
+            <label id="labelEmail" for="email">Email:</label>
+
+            <input type="email" placeholder="Email" v-model="email" id="email" required maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+            <label id="labelLogin" for="login">Login:</label>
+
+            <input type="text" placeholder="Login" v-model="login" id="nick" required maxlength="20">
+
+            <label id="labelSenha" for="senha">Senha:</label>
+
+            <input type="password" placeholder="Senha" v-model="senha" id="senha" required maxlength="10">
+
+            <label id="labelConf" for="confsenha">Confirmar senha:</label>
+
+            <input type="password" placeholder="Confirmar Senha" v-model="confirmarSenha" id="confsenha" required maxlength="10">
+
+            <button id="botao" type="submit">REGISTRAR-SE</button>
+        </form>
+        <div id="status">
+            {{status}}
+        </div>
+
+        <form method="get" action="./index.html"><button id="botao1" type="submit">VOLTAR</button></form>
+
+    </article>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nome: "",
+                login: "",
+                email: "",
+                senha: "",
+                confirmarSenha: "",
+                dataNascimento: "",
+                status: ""
+            }, methods: {
+
+                salvar: function () {
+                    if (this.senha == this.confirmarSenha) {
+                        var token = window.sessionStorage.getItem('token');
+                        axios.defaults.headers.common['Authorization'] = `${token}`;
+
+                        axios.post('api/jogador', {
+                            nome: this.nome,
+                            login: this.login,
+                            email: this.email,
+                            senha: this.senha,
+                            dataNascimento: this.dataNascimento
+                        }).then(response => {
+                            if (response.data.id > 0) {
+                                this.status = "Usuario Cadastrado com sucesso!"
+                                this.nome = ""
+                                this.email = ""
+                                this.senha = ""
+                                this.confirmarSenha = ""
+                                this.login = ""
+                                this.dataNascimento = ""
+                            }
+                            else {
+                                this.status = "Já existe um usuário cadastrado com esse nome";
+                            }
+                        }).catch(function (error) {
+                            console.log(`TEM PARADA ERRADA AI MERMÃO : ${error}`);
+                        });
+                    } else {
+                        this.status = "As senhas são diferentes"
+                    }
+
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
